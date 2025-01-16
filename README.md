@@ -6,11 +6,12 @@ Este projeto utiliza o [Health AI Developer Foundations (HAI-DEF)](https://devel
 
 - Modelo pronto de classificação de imagens histopatológicas benignas ou cancerígenas
 - Conversão do modelo em formato `Keras` para `SavedModel`
+- Aplicação Streamlit para fins de demonstração do modelo em interface amigável
 
 ## Pré-requisitos
 
 - Python 3.8 ou acima
-- Pacotes Python requisitados (cheque o arquivo `requirements.txt`)
+- Pacotes Python requisitados (cheque o arquivo `requirements.txt` para a aplicação Streamlit ou dentro do próprio notebook para os demais)
 
 ## Instalação
 
@@ -20,14 +21,30 @@ git clone [repository-url]
 cd ia-para-patologia
 ```
 
-2. Instale as dependências Python:
+2. Crie um ambiente virtual:
 ```bash
-pip install -r requirements.txt
+python3 -m venv .env
+source .env/bin/activate
+```
+
+3. Instale as dependências Python:
+```bash
+pip install -r pathology-demo/requirements.txt
+```
+
+4. Crie o diretório para armazenar o modelo em formato `SavedModel` (pasta completa `fine_tuned_model_tf` gerada a partir do notebook `carregando_modelo_treinado.ipynb`):
+```bash
+cd pathology-demo
+mkdir local_models
 ```
 
 ## Uso
 
-TO DO
+1. Para utilização local da aplicação Streamlit:
+```bash
+cd pathology-demo
+streamlit run Home.py --server.port=8080
+```
 
 ## Estrutura do projeto
 
@@ -35,7 +52,7 @@ TO DO
 ia-para-patologia/
 ├── carregando_modelo_treinado  # Notebook de conversão de formatos de modelos
 ├── fine_tuned_model.keras      # Modelo de classificação pronto
-└── requirements.txt  # Python dependencies
+└── pathology-demo/             # Aplicação Streamlit
 ```
 
 ## Contribuindo
