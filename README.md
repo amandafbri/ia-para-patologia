@@ -12,7 +12,7 @@ Este projeto utiliza o [Health AI Developer Foundations (HAI-DEF)](https://devel
 ## Pré-requisitos
 
 - Python 3.8 ou acima
-- Pacotes Python requisitados (cheque o arquivo `requirements.txt` para a aplicação Streamlit ou dentro do próprio notebook para os demais)
+- Pacotes Python requisitados (cheque os arquivos `requirements.txt`)
 
 ### Caso vá integrar o modelo em Google Cloud
 - Projeto do Google Cloud: certifique-se de ter um Projeto do Google Cloud ativo. Se não tiver, você pode criar um no Google Cloud Console.
