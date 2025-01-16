@@ -71,4 +71,4 @@ if st.button("Submit") and image_data:
     pass
 else:
     if image_data is None:
-        st.warning("Faça upload de um arquivo de imagem e insira um prompt antes de enviar.")
+        st.warning("Faça upload de um arquivo de imagem antes de enviar.")
