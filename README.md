@@ -84,8 +84,36 @@ docker push [LOCATION]-docker.pkg.dev/[PROJECT_ID]/[REPOSITORY_NAME]/pathology:l
 4. Importe o modelo no Model Registry da Vertex AI:
 [Interface](https://cloud.google.com/vertex-ai/docs/model-registry/import-model)
 
+```bash
+gcloud ai models upload \
+--region=LOCATION \
+--display-name=MODEL_NAME \
+--container-image-uri=IMAGE_URI
+--container-health-route=/health_check \
+--container-predict-route=/predict
+```
+
 5. Faça o deploy em um endpoint da Vertex AI:
 [Interface](https://cloud.google.com/vertex-ai/docs/general/deployment)
+
+```bash
+gcloud ai endpoints create \
+  --region=LOCATION_ID \
+  --display-name=ENDPOINT_NAME
+
+gcloud ai endpoints list \
+  --region=LOCATION_ID \
+  --filter=display_name=ENDPOINT_NAME
+
+gcloud ai endpoints deploy-model ENDPOINT_ID\
+  --region=LOCATION_ID \
+  --model=MODEL_ID \
+  --display-name=DEPLOYED_MODEL_NAME \
+  --min-replica-count=MIN_REPLICA_COUNT \
+  --max-replica-count=MAX_REPLICA_COUNT \
+  --traffic-split=0=100
+  --machine-type=n1-standard-2
+```
 
 6. Teste usando o arquivo `b64_for_test.txt`, que contém uma imagem de teste já em base64:
 ```json
