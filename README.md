@@ -73,12 +73,12 @@ docker build -t pathology .
 
 2. Crie uma tag para a imagem:
 ```bash
-docker tag pathology us-central1-docker.pkg.dev/[PROJECT_ID]/[REPOSITORY_NAME]/pathology:latest
+docker tag pathology [LOCATION]-docker.pkg.dev/[PROJECT_ID]/[REPOSITORY_NAME]/pathology:latest
 ```
 
 3. Empurre a imagem para o Artifact Registry
 ```bash
-docker push us-central1-docker.pkg.dev/[PROJECT_ID]/[REPOSITORY_NAME]/pathology:latest
+docker push [LOCATION]-docker.pkg.dev/[PROJECT_ID]/[REPOSITORY_NAME]/pathology:latest
 ```
 
 4. Importe o modelo no Model Registry da Vertex AI:
