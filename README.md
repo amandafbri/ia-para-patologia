@@ -54,7 +54,7 @@ mkdir local_model
 1. Execute no terminal:
 ```bash
 cd pathology-demo
-streamlit run Home.py --server.port=8080
+[OPTIONAL: python3 -m] streamlit run Home.py --server.port=8080
 ```
 
 ### Para integração com Vertex AI: 
