@@ -57,6 +57,16 @@ cd pathology-demo
 [OPTIONAL: python3 -m] streamlit run Home.py --server.port=8080
 ```
 
+### Para utilização com Cloud Run da aplicação Streamlit:
+
+```bash
+gcloud builds submit --tag gcr.io/[PROJECT_ID]/pathology-demo
+```
+
+```bash
+gcloud run deploy --image gcr.io/[PROJECT_ID]/pathology-demo --platform managed --region us-central1 --allow-unauthenticated
+```
+
 ### Para integração com Vertex AI: 
 
 1. Crie um repositório no Artifact Registry para armazenar sua imagem de container:
